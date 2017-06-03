@@ -59,11 +59,12 @@ class Math_genius < Multilinguist
 
   def report_total(value)
     total = 0
-     value.each do |number|
-      total += number
-    end
+    value.each do |number|
+    total += number
+   end
     say_in_local_language("The Total is #{total}")
-  end
+   end
+
 
   def get_pide(number)
     pi = 3.1416
@@ -74,12 +75,24 @@ end
 
 class QuoteDude < Multilinguist
 
-
+  #attr_accessor :wisdom, :friendship, :love, :movie, :tv
   @@collection_of_quotes = []
+
+
+  #   def initialize
+  #    @wisdom = wisdom
+  #    @friendship = friendship
+  #    @love = love
+  #    @movie = movie
+  #    @tv = tv
+  #  end
 
   def add_quote(quote)
     @@collection_of_quotes << quote
+    QuoteDude.all
   end
+
+
 
   def self.all
     puts @@collection_of_quotes
